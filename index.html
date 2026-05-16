@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Swedish — Learn Swedish Online</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      color:white;
+      background:#0f172a;
+      overflow-x:hidden;
+    }
+
+    /* Blurred Stockholm background */
+    .background{
+      position:fixed;
+      inset:0;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+        url('https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=2000&auto=format&fit=crop')
+        center/cover no-repeat;
+      filter: blur(3px);
+      transform: scale(1.05);
+      z-index:-2;
+    }
+
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.25);
+      z-index:-1;
+    }
+
+    header{
+      padding:80px 20px 60px;
+      text-align:center;
+    }
+
+    header h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      color:#facc15;
+      letter-spacing:2px;
+    }
+
+    header p{
+      max-width:850px;
+      margin:auto;
+      font-size:1.2rem;
+      line-height:1.8;
+    }
+
+    .language-switcher{
+      margin-top:30px;
+    }
+
+    .language-switcher button{
+      border:none;
+      padding:12px 18px;
+      margin:5px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:bold;
+      background:white;
+      color:#0f172a;
+      transition:0.3s;
+    }
+
+    .language-switcher button:hover{
+      transform:translateY(-2px);
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:40px 20px 80px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.4rem;
+      margin-bottom:40px;
+      color:#facc15;
+    }
+
+    .teachers{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .teacher-card{
+      background:rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+      transition:0.3s;
+    }
+
+    .teacher-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .teacher-card img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+    }
+
+    .teacher-content{
+      padding:28px;
+    }
+
+    .teacher-content h3{
+      font-size:1.8rem;
+      margin-bottom:14px;
+      color:#fde047;
+    }
+
+    .teacher-content p{
+      line-height:1.8;
+      color:#f1f5f9;
+    }
+
+    .features{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .feature{
+      background:rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+    }
+
+    .feature h4{
+      margin-bottom:12px;
+      color:#fde047;
+      font-size:1.3rem;
+    }
+
+    .contact{
+      margin-top:80px;
+      text-align:center;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding:50px 20px;
+      border-radius:24px;
+    }
+
+    .contact h2{
+      color:#fde047;
+      margin-bottom:20px;
+      font-size:2rem;
+    }
+
+    .contact p{
+      margin:10px 0;
+      font-size:1.1rem;
+    }
+
+    footer{
+      text-align:center;
+      padding:35px 20px;
+      color:#e2e8f0;
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:2.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="overlay"></div>
+
+<header>
+  <h1>SWEDISH</h1>
+
+  <p id="hero-text">
+    Professional online Swedish language courses with experienced teachers.
+    Learn conversational Swedish, grammar, pronunciation, and prepare for the Swedish citizenship exam.
+  </p>
+
+  <div class="language-switcher">
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('sv')">Svenska</button>
+    <button onclick="setLanguage('ru')">Русский</button>
+  </div>
+</header>
+
+<main class="container">
+
+  <h2 class="section-title" id="teachers-title">
+    Meet Our Teachers
+  </h2>
+
+  <div class="teachers">
+
+    <div class="teacher-card">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Kate">
+
+      <div class="teacher-content">
+        <h3>Kate</h3>
+
+        <p id="kate-bio">
+          Certified Swedish teacher with qualifications from Stockholm University.
+          Kate also works part-time teaching Swedish students and specializes in helping international students pass the Swedish citizenship exam.
+        </p>
+      </div>
+    </div>
+
+    <div class="teacher-card">
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1200&auto=format&fit=crop" alt="Nastya">
+
+      <div class="teacher-content">
+        <h3>Nastya</h3>
+
+        <p id="nastya-bio">
+          Experienced language instructor with qualifications from Stockholm University.
+          Nastya teaches Swedish part-time for local students and focuses on conversational fluency and citizenship exam preparation.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="features">
+
+    <div class="feature">
+      <h4 id="feature1-title">Citizenship Exam</h4>
+      <p id="feature1-text">
+        Special preparation for Swedish citizenship language requirements.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h4 id="feature2-title">Online Lessons</h4>
+      <p id="feature2-text">
+        Flexible online classes for all levels.
+      </p>
+    </div>
+
+    <div class="feature">
+      <h4 id="feature3-title">Real Swedish</h4>
+      <p id="feature3-text">
+        Practice authentic Swedish used in everyday life and work.
+      </p>
+    </div>
+
+  </div>
+
+  <section class="contact">
+
+    <h2 id="contact-title">Contact Us</h2>
+
+    <p>Email: hello@swedish-course.com</p>
+    <p>Telegram: @swedishcourse</p>
+    <p>Instagram: @swedish.course</p>
+
+    <p id="contact-text">
+      Feel free to contact us for course details, pricing, or feedback.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <p id="footer-text">
+    Swedish © 2026 — Online Swedish Language Courses
+  </p>
+</footer>
+
+<script>
+  const translations = {
+
+    en: {
+      hero:
+        "Professional online Swedish language courses with experienced teachers. Learn conversational Swedish, grammar, pronunciation, and prepare for the Swedish citizenship exam.",
+
+      teachers:
+        "Meet Our Teachers",
+
+      kate:
+        "Certified Swedish teacher with qualifications from Stockholm University. Kate also works part-time teaching Swedish students and specializes in helping international students pass the Swedish citizenship exam.",
+
+      nastya:
+        "Experienced language instructor with qualifications from Stockholm University. Nastya teaches Swedish part-time for local students and focuses on conversational fluency and citizenship exam preparation.",
+
+      f1t:"Citizenship Exam",
+      f1:"Special preparation for Swedish citizenship language requirements.",
+
+      f2t:"Online Lessons",
+      f2:"Flexible online classes for all levels.",
+
+      f3t:"Real Swedish",
+      f3:"Practice authentic Swedish used in everyday life and work.",
+
+      contact:"Contact Us",
+
+      contactText:
+        "Feel free to contact us for course details, pricing, or feedback.",
+
+      footer:
+        "Swedish © 2026 — Online Swedish Language Courses"
+    },
+
+    sv: {
+      hero:
+        "Professionella onlinekurser i svenska med erfarna lärare. Lär dig konversationssvenska, grammatik och uttal samt förbered dig inför medborgarskapsprovet.",
+
+      teachers:
+        "Våra lärare",
+
+      kate:
+        "Certifierad svenskalärare med utbildning från Stockholms universitet. Kate arbetar även deltid med undervisning för svenska studenter och hjälper internationella elever att klara medborgarskapsprovet.",
+
+      nastya:
+        "Erfaren språklärare med utbildning från Stockholms universitet. Nastya undervisar svenska deltid för lokala studenter och fokuserar på flytande tal och förberedelse inför medborgarskapsprovet.",
+
+      f1t:"Medborgarskapsprov",
+      f1:"Särskild förberedelse för svenska språkkrav och medborgarskap.",
+
+      f2t:"Onlinelektioner",
+      f2:"Flexibla onlinelektioner för alla nivåer.",
+
+      f3t:"Äkta svenska",
+      f3:"Öva riktig svenska som används i vardagen och på jobbet.",
+
+      contact:"Kontakta oss",
+
+      contactText:
+        "Kontakta oss gärna för kursinformation, priser eller feedback.",
+
+      footer:
+        "Swedish © 2026 — Onlinekurser i svenska"
+    },
+
+    ru: {
+      hero:
+        "Профессиональные онлайн-курсы шведского языка с опытными преподавателями. Изучайте разговорный шведский, грамматику и произношение, а также готовьтесь к экзамену на гражданство Швеции.",
+
+      teachers:
+        "Наши преподаватели",
+
+      kate:
+        "Сертифицированный преподаватель шведского языка с квалификацией Стокгольмского университета. Кейт также преподаёт шведский язык студентам в Швеции и помогает иностранцам подготовиться к экзамену на гражданство.",
+
+      nastya:
+        "Опытный преподаватель языка с квалификацией Стокгольмского университета. Настя преподаёт шведский студентам в Швеции и специализируется на разговорной практике и подготовке к экзамену на гражданство.",
+
+      f1t:"Экзамен на гражданство",
+      f1:"Подготовка к языковым требованиям для получения гражданства Швеции.",
+
+      f2t:"Онлайн-занятия",
+      f2:"Гибкие онлайн-уроки для любого уровня.",
+
+      f3t:"Настоящий шведский",
+      f3:"Практика живого шведского языка для жизни и работы.",
+
+      contact:"Связаться с нами",
+
+      contactText:
+        "Свяжитесь с нами для информации о курсах, ценах или обратной связи.",
+
+      footer:
+        "Swedish © 2026 — Онлайн-курсы шведского языка"
+    }
+  };
+
+  function setLanguage(lang){
+
+    document.getElementById('hero-text').innerText =
+      translations[lang].hero;
+
+    document.getElementById('teachers-title').innerText =
+      translations[lang].teachers;
+
+    document.getElementById('kate-bio').innerText =
+      translations[lang].kate;
+
+    document.getElementById('nastya-bio').innerText =
+      translations[lang].nastya;
+
+    document.getElementById('feature1-title').innerText =
+      translations[lang].f1t;
+
+    document.getElementById('feature1-text').innerText =
+      translations[lang].f1;
+
+    document.getElementById('feature2-title').innerText =
+      translations[lang].f2t;
+
+    document.getElementById('feature2-text').innerText =
+      translations[lang].f2;
+
+    document.getElementById('feature3-title').innerText =
+      translations[lang].f3t;
+
+    document.getElementById('feature3-text').innerText =
+      translations[lang].f3;
+
+    document.getElementById('contact-title').innerText =
+      translations[lang].contact;
+
+    document.getElementById('contact-text').innerText =
+      translations[lang].contactText;
+
+    document.getElementById('footer-text').innerText =
+      translations[lang].footer;
+  }
+</script>
+
+</body>
+</html>
